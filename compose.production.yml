@@ -16,6 +16,8 @@ services:
       - traefik.http.routers.hh-estoque.entrypoints=websecure
       - traefik.http.routers.hh-estoque.tls=true
       - traefik.http.routers.hh-estoque.tls.certresolver=letsencrypt
+      - traefik.http.routers.hh-estoque-web.rule=Host(`estoque.happyhousemarcenaria.com.br`)
+      - traefik.http.routers.hh-estoque-web.entrypoints=web
       - traefik.http.services.hh-estoque.loadbalancer.server.port=3000
 
 networks:
