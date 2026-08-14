@@ -1,9 +1,23 @@
 services:
   nx-estoque:
     build: .
-    container_name: nx-estoque
+    container_name: hh-estoque
     restart: unless-stopped
     ports:
       - "3017:3000"
     volumes:
       - ./data:/app/data
+    networks:
+      - default
+      - docker_default
+    labels:
+      - traefik.enable=true
+      - traefik.http.routers.hh-estoque.rule=Host(`estoque.happyhousemarcenaria.com.br`)
+      - traefik.http.routers.hh-estoque.entrypoints=websecure
+      - traefik.http.routers.hh-estoque.tls=true
+      - traefik.http.routers.hh-estoque.tls.certresolver=letsencrypt
+      - traefik.http.services.hh-estoque.loadbalancer.server.port=3000
+
+networks:
+  docker_default:
+    external: true
