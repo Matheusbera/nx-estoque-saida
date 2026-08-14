@@ -1,0 +1,9 @@
+services:
+  nx-estoque:
+    build: .
+    container_name: nx-estoque
+    restart: unless-stopped
+    ports:
+      - "3017:3000"
+    volumes:
+      - ./data:/app/data
