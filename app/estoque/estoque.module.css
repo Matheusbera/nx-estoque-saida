@@ -180,6 +180,11 @@
   align-items: start;
 }
 
+.singleWorkspace {
+  max-width: 1480px;
+  margin: 0 auto;
+}
+
 .panel {
   background: #fff;
   border: 1px solid #d7e0e8;
@@ -345,6 +350,15 @@
   flex-wrap: wrap;
 }
 
+.printActions {
+  max-width: 1480px;
+  margin: 0 auto 14px;
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
 .search {
   margin: 14px;
   display: flex;
@@ -366,6 +380,13 @@
   gap: 10px;
   max-height: 560px;
   overflow: auto;
+}
+
+.historyWide {
+  padding: 0 14px 14px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 10px;
 }
 
 .historyCard,
@@ -410,6 +431,130 @@
   border-radius: 8px;
   color: #64748b;
   text-align: center;
+}
+
+.tabs {
+  padding: 14px 18px 0;
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.tabs button {
+  min-height: 38px;
+  border: 1px solid #cbd5df;
+  border-radius: 7px;
+  background: #fff;
+  color: #334155;
+  padding: 0 13px;
+  font-weight: 900;
+  cursor: pointer;
+}
+
+.tabs .tabActive {
+  background: #20313f;
+  border-color: #20313f;
+  color: #fff;
+}
+
+.registerForm {
+  padding: 18px;
+  display: grid;
+  grid-template-columns: minmax(220px, 1fr) minmax(150px, 220px);
+  gap: 12px;
+  align-items: end;
+}
+
+.registerForm label {
+  color: #526273;
+  display: grid;
+  gap: 6px;
+  font-size: 12px;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.registerForm input {
+  width: 100%;
+  border: 1px solid #cbd5df;
+  border-radius: 7px;
+  background: #fff;
+  color: #111827;
+  min-height: 42px;
+  padding: 9px 11px;
+}
+
+.registryGrid {
+  padding: 0 18px 18px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 10px;
+}
+
+.registryRow {
+  min-height: 48px;
+  border: 1px solid #dbe3eb;
+  border-radius: 8px;
+  background: #f8fafc;
+  padding: 8px 8px 8px 12px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.registryRow span {
+  font-weight: 800;
+}
+
+.inventoryGrid {
+  padding: 0 18px 18px;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 360px;
+  gap: 14px;
+  align-items: start;
+}
+
+.negative {
+  color: #b91c1c;
+  font-weight: 900;
+}
+
+.movements {
+  border: 1px solid #dbe3eb;
+  border-radius: 8px;
+  background: #f8fafc;
+  padding: 14px;
+  display: grid;
+  gap: 10px;
+}
+
+.movements h3 {
+  margin: 0 0 4px;
+  font-size: 15px;
+}
+
+.movementRow {
+  border: 1px solid #dbe3eb;
+  border-radius: 8px;
+  background: #fff;
+  padding: 10px;
+}
+
+.movementRow strong,
+.movementRow span,
+.movementRow small {
+  display: block;
+}
+
+.movementRow span {
+  margin: 4px 0;
+  color: #334155;
+  font-size: 13px;
+}
+
+.movementRow small {
+  color: #64748b;
 }
 
 .printEmpty {
@@ -538,6 +683,10 @@
   .workspace {
     grid-template-columns: 1fr;
   }
+
+  .inventoryGrid {
+    grid-template-columns: 1fr;
+  }
 }
 
 @media (max-width: 760px) {
@@ -556,6 +705,10 @@
   }
 
   .itemBuilder {
+    grid-template-columns: 1fr;
+  }
+
+  .registerForm {
     grid-template-columns: 1fr;
   }
 }
